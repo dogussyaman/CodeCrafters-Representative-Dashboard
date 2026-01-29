@@ -141,7 +141,7 @@ export function HowItWorksSection() {
         />
         <FeatureCard
           title="Chatbot"
-          description="DigiBot ile akıllı yardım ve hızlı yanıtlar."
+          description="Asistan ile akıllı yardım ve hızlı yanıtlar."
           href="/dashboard/chatbot"
           icon={<Bot className="size-5" />}
           items={["Hazır cevaplar", "Süreç yönlendirme", "Operasyonel ipuçları"]}

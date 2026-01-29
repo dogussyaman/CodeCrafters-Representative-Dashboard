@@ -76,10 +76,10 @@ export default async function Layout({ children }: Readonly<{ children: ReactNod
                   <span>Editör</span>
                 </Button>
               </Link>
-              <Link href="/dashboard/chatbot" aria-label="DigiBot">
+              <Link href="/dashboard/chatbot" aria-label="Asistan">
                 <Button variant="outline" size="sm" className="gap-2 px-2">
                   <Bot className="size-4" />
-                  <span>DigiBot</span>
+                  <span>Asistan</span>
                 </Button>
               </Link>
               <AccountSwitcher users={users} />

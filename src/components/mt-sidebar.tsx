@@ -10,6 +10,7 @@ import {
   UserCog,
   Building2,
   Bell,
+  Bot,
 } from "lucide-react";
 import {
   Sidebar,
@@ -24,11 +25,13 @@ import { cn } from "@/lib/utils";
 
 const mtMenuItems = [
   { title: "Panel", href: "/dashboard", icon: Home },
-  { title: "İletişim Mesajları", href: "/dashboard/iletisim-mesajlari", icon: MessageSquare },
   { title: "Destek Biletleri", href: "/dashboard/destek-biletleri", icon: Ticket },
+  { title: "Asistan", href: "/dashboard/chatbot", icon: Bot },
+  { title: "İletişim Mesajları", href: "/dashboard/iletisim-mesajlari", icon: MessageSquare },
   { title: "Eğitim Talepleri", href: "/dashboard/egitim-talepleri", icon: BookOpen },
   { title: "Rol Talepleri", href: "/dashboard/rol-talepleri", icon: UserCog },
   { title: "Şirket Talepleri", href: "/dashboard/sirket-talepleri", icon: Building2 },
+  { title: "Şirket oluştur", href: "/dashboard/sirket-olustur", icon: Building2 },
   { title: "Bildirimler", href: "/dashboard/bildirimler", icon: Bell },
 ];
 

@@ -49,7 +49,7 @@ export default function HelpPage() {
             <Lightbulb className="h-5 w-5 text-primary" />
             <CardTitle>Hızlı Başlangıç Rehberi</CardTitle>
           </div>
-          <CardDescription>DİGİKOÇ'u kullanmaya başlama adımları</CardDescription>
+          <CardDescription>CodeCrafters MT panelini kullanmaya başlama adımları</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid gap-4 md:grid-cols-2">
@@ -77,7 +77,7 @@ export default function HelpPage() {
                 Özellikleri Keşfedin
               </h4>
               <p className="text-sm text-muted-foreground">
-                Hazır cümleler, şablonlar, editör ve DigiBot gibi özellikleri kullanmaya başlayın.
+                Hazır cümleler, şablonlar, editör ve asistan gibi özellikleri kullanmaya başlayın.
               </p>
             </div>
             <div className="rounded-lg border p-4">
@@ -134,11 +134,11 @@ export default function HelpPage() {
               </AccordionContent>
             </AccordionItem>
 
-            {/* DigiBot */}
+            {/* Asistan */}
             <AccordionItem value="item-5">
-              <AccordionTrigger>DigiBot nasıl kullanılır?</AccordionTrigger>
+              <AccordionTrigger>Asistan nasıl kullanılır?</AccordionTrigger>
               <AccordionContent>
-                Üst menüden "DigiBot" butonuna tıklayarak asistanı açabilirsiniz. DigiBot ile müşteri sorularına cevap hazırlayabilir,
+                Üst menüden "Asistan" butonuna tıklayarak asistanı açabilirsiniz. Asistan ile müşteri sorularına cevap hazırlayabilir,
                 içerik üretebilir ve hızlı bilgi alabilirsiniz. Sorunuzu yazın ve yapay zeka size yardımcı olacaktır.
               </AccordionContent>
             </AccordionItem>
@@ -230,7 +230,7 @@ export default function HelpPage() {
             < AccordionItem value="item-15" >
               <AccordionTrigger>Bir sorun yaşadığımda kime ulaşmalıyım?</AccordionTrigger>
               <AccordionContent>
-                E-posta (support@digikoc.com), çağrı merkezi (0 850 000 00 00) veya DigiBot asistanı üzerinden
+                E-posta (support@codecrafters.com), çağrı merkezi (0 850 000 00 00) veya asistan üzerinden
                 destek alabilirsiniz. Geri bildirim formu üzerinden de talepte bulunabilirsiniz.
               </AccordionContent>
             </AccordionItem >
@@ -284,9 +284,9 @@ export default function HelpPage() {
             </div>
 
             <div className="rounded-lg border p-4 space-y-3">
-              <h4 className="font-semibold">DigiBot ile İçerik Üretme</h4>
+              <h4 className="font-semibold">Asistan ile İçerik Üretme</h4>
               <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
-                <li>Üst menüden "DigiBot" butonuna tıklayın</li>
+                <li>Üst menüden "Asistan" butonuna tıklayın</li>
                 <li>Mesaj kutusuna isteğinizi yazın</li>
                 <li>"Gönder" butonuna tıklayın veya Enter'a basın</li>
                 <li>Yanıtı bekleyin</li>
@@ -385,7 +385,7 @@ export default function HelpPage() {
           </div>
 
           <div className="rounded-lg border p-4">
-            <h4 className="font-semibold mb-2">DigiBot yanıt vermiyor</h4>
+            <h4 className="font-semibold mb-2">Asistan yanıt vermiyor</h4>
             <p className="text-sm text-muted-foreground mb-2">
               <strong>Çözüm:</strong> İnternet bağlantınızı kontrol edin. Sayfayı yenileyin. Çok uzun sorular yerine
               kısa ve net sorular sorun.
@@ -461,7 +461,7 @@ export default function HelpPage() {
               <div className="w-full aspect-video bg-muted rounded-md flex items-center justify-center">
                 <Video className="h-12 w-12 text-muted-foreground" />
               </div>
-              <h4 className="font-semibold text-sm">DigiBot Kullanımı</h4>
+              <h4 className="font-semibold text-sm">Asistan Kullanımı</h4>
               <p className="text-xs text-muted-foreground">AI asistan ile verimli çalışma</p>
               <Badge variant="outline" className="text-xs">Yakında</Badge>
             </div>
@@ -480,8 +480,8 @@ export default function HelpPage() {
             <CardDescription>Resmi talepler ve raporlamalar için.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
-            <a href="mailto:support@digikoc.com" className="text-sm text-primary hover:underline">
-              support@digikoc.com
+            <a href="mailto:support@codecrafters.com" className="text-sm text-primary hover:underline">
+              support@codecrafters.com
             </a>
             <p className="text-xs text-muted-foreground">Yanıt süresi: 24 saat içinde</p>
           </CardContent>
@@ -497,7 +497,7 @@ export default function HelpPage() {
           </CardHeader>
           <CardContent>
             <Button asChild variant="outline" className="w-full">
-              <Link href="/dashboard/chatbot">DigiBot'u Aç</Link>
+              <Link href="/dashboard/chatbot">Asistanı Aç</Link>
             </Button>
             <p className="text-xs text-muted-foreground mt-2">7/24 aktif</p>
           </CardContent>

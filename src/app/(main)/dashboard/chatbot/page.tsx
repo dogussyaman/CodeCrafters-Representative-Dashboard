@@ -14,10 +14,10 @@ type Message = {
 };
 
 const buttons = [
-  { text: "Güvence paketleri hakkında bilgi verir misiniz?" },
-  { text: "Kampanyalar hakkında bilgi alabilir miyim?" },
-  { text: "İzmir Ofis müdürü kimdir?" },
-  { text: "Destek için nasıl iletişime geçebilirim?" },
+  { text: "Destek bileti tipleri nelerdir?" },
+  { text: "Bilet durumu nasıl güncellenir?" },
+  { text: "Çözüm notu nasıl yazılır?" },
+  { text: "Açık biletlere nasıl bakılır? MT adımları neler?" },
 ];
 
 export default function ChatbotPage() {
@@ -82,17 +82,14 @@ export default function ChatbotPage() {
 
 
   const handleButtonClick = (text: string) => {
-    setInput(text);
-    if (input) {
-      document.getElementById('send-button')?.click();
-    }
+    sendMessage(text);
   };
 
 
 
   return (
     <div className="min-h-screen">
-      <div className="max-w-5xl mx-auto min-h-[100vh] flex flex-col">
+      <div className="max-w-5xl mx-auto min-h-screen flex flex-col">
         {/* Messages */}
         <div className="flex-1 overflow-y-auto px-6 pt-10 pb-6 space-y-6">
           {messages.map((message, index) => (
@@ -142,9 +139,9 @@ export default function ChatbotPage() {
             <div className="flex flex-col items-center justify-center min-h-[600px] gap-2">
               <div className='flex flex-col items-center justify-center gap-2'>
                 <div className="flex flex-col items-center justify-center gap-2">
-                  <h1 className="text-2xl font-bold">Merhaba Ben DigiBot!</h1>
-                  <p className="text-slate-500 text-sm">Sohbete başlamak için bir mesaj yazın 📝</p>
-                  <p className="text-slate-500 text-sm">Şaunda sadece sistemimdeki verilere göre cevap verebiliyorum. 📊</p>
+                  <h1 className="text-2xl font-bold">Merhaba, CodeCrafters MT Asistanı</h1>
+                  <p className="text-slate-500 text-sm">Destek biletleri ve MT iş akışı hakkında soru sorun 📝</p>
+                  <p className="text-slate-500 text-sm">Bilet tipleri, durumlar, atama ve çözüm notu konularında yardımcı olabilirim. 📊</p>
                 </div>
               </div>
               <div className='flex flex-col gap-2 border-t border-slate-200 pt-2'>

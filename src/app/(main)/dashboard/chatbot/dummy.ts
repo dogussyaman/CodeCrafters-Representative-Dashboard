@@ -33,6 +33,40 @@ export {
     faqData
 } from "./units-data";
 
+// Destek biletleri eğitim verisi (support_tickets - MT iş akışı)
+export const supportTicketsTraining = {
+  ticketTypes: [
+    { id: "login_error", label: "Giriş hatası", description: "Giriş, şifre veya hesap erişim sorunları. Kullanıcı giriş yapamıyorsa bu tip seçilir." },
+    { id: "feedback", label: "Geri bildirim", description: "Öneri, şikayet veya memnuniyet bildirimi. Genel geri bildirimler için." },
+    { id: "technical", label: "Teknik", description: "Teknik hata, performans veya entegrasyon sorunları. Yazılım/sistem hataları için." },
+    { id: "other", label: "Diğer", description: "Yukarıdaki kategorilere girmeyen tüm talepler." },
+  ],
+  statuses: [
+    { id: "open", label: "Açık", description: "Henüz ele alınmadı. Yeni gelen biletler bu durumda başlar." },
+    { id: "in_progress", label: "İşlemde", description: "MT tarafından işleniyor. Bileti üstlendiğinizde bu duruma alın." },
+    { id: "resolved", label: "Çözüldü", description: "Çözüm uygulandı. Çözüm notu (resolution_no) yazıp bu duruma geçin." },
+    { id: "closed", label: "Kapatıldı", description: "Talep kapatıldı. Artık işlem yapılmayacak biletler için." },
+  ],
+  priorities: [
+    { id: "low", label: "Düşük" },
+    { id: "medium", label: "Orta" },
+    { id: "high", label: "Yüksek" },
+    { id: "urgent", label: "Acil" },
+  ],
+  mtSteps: [
+    { step: 1, title: "Biletleri listele", description: "Destek Biletleri sayfasında tüm biletleri görüntüle. Durum, öncelik ve tip ile filtrele." },
+    { step: 2, title: "Detayı incele", description: "Bilete tıklayarak konu, açıklama, ekler (attachment_urls) ve iletişim bilgilerini oku." },
+    { step: 3, title: "Atama yap", description: "Bileti kendine veya başka bir MT/admin'e ata (assigned_to alanı)." },
+    { step: 4, title: "Durum güncelle", description: "Akış: Açık → İşlemde → Çözüldü → Kapatıldı. Bileti üstlendiğinizde İşlemde yapın." },
+    { step: 5, title: "Çözüm notu yaz", description: "Çözüldü veya Kapatıldı biletlerde resolution_no ve gerekirse açıklama ekleyin." },
+  ],
+  helpLinks: {
+    destekBiletleri: "/dashboard/destek-biletleri",
+    panel: "/dashboard",
+    yardim: "/dashboard/help",
+  },
+};
+
 // Import data for system prompt
 import { typewriterPhrases as phrases } from "../default/_data/typewriter-phrases";
 import { curriculum as curriculumData } from "../education/_data/curriculum";
@@ -51,19 +85,23 @@ import {
     faqData
 } from "./units-data";
 
-export const systemPrompt = `Sen DigiKoçBot'sun. Müşteri temsilcilerine yetenekli, profesyonel ve dosthane bir şekilde yardımcı ol.
+export const systemPrompt = `Sen CodeCrafters MT Asistanı'sın. Müşteri temsilcilerine (MT) destek biletleri ve iş akışı konusunda yetenekli, profesyonel ve dostça yardımcı ol.
 Cevap verirken emoji kullan.
 
-ÖNEMLİ KURALLLAR:
+ÖNEMLİ KURALLAR:
 - Maddeli listeler oluştururken ASLA "*" işaretini kullanma
 - Bunun yerine "-" işareti veya numaralandırma (1., 2., 3. vb.) kullan
 - Her maddeyi yeni satırda yaz
 - Cevapları düzenli ve okunabilir şekilde formatla
 
-Sadece aşağıdaki verileri kullanarak cevap ver:
+ÖNCELİKLİ VERİ - Destek Biletleri Eğitimi (support_tickets):
+${JSON.stringify(supportTicketsTraining)}
 
-1. Typewriter Phrases (Hoşgeldin Mesajları): ${JSON.stringify(phrases)}
-2. Müfredat (Eğitim Programı): ${JSON.stringify(curriculumData)}
+Destek biletleri ile ilgili sorularda YUKARIDAKI supportTicketsTraining verisini kullan. Bilet tipleri, durumlar, öncelikler ve MT adımlarını açıkla. Panel ve Destek Biletleri sayfasına yönlendir (/dashboard, /dashboard/destek-biletleri).
+
+Diğer veriler (sadece ilgili sorularda kullan):
+1. Typewriter Phrases: ${JSON.stringify(phrases)}
+2. Müfredat: ${JSON.stringify(curriculumData)}
 3. Eğitim İstatistikleri: ${JSON.stringify(statsData)}
 4. Bildirimler: ${JSON.stringify(notificationsData)}
 5. Aksiyonlar (OD Talep): ${JSON.stringify(actionsData)}
@@ -78,10 +116,8 @@ Sadece aşağıdaki verileri kullanarak cevap ver:
 14. Sık Sorulan Sorular: ${JSON.stringify(faqData)}
 
 ÖZELLİKLER:
-- Eğer kullanıcı sana bir metin verip "bunu kurumsal bir dilde tekrar yaz" derse, metni daha profesyonel ve kurumsal bir dille yeniden yaz
-- Güvence paketleri sorularında Satış Birimi ve Müşteri Hizmetleri arasındaki farkları açıkla
-- Bölge müdürleri ve ofis müdürleri hakkında detaylı bilgi ver
-- İzmir Ofis müdürü: Selin Arslan
+- Destek biletleri, bilet tipleri, durum güncelleme, çözüm notu, atama gibi MT iş akışı sorularında supportTicketsTraining ile detaylı cevap ver
+- Eğer kullanıcı "bunu kurumsal bir dilde tekrar yaz" derse, metni profesyonel ve kurumsal dille yeniden yaz
 - Yardım ve destek kanalları hakkında bilgi ver
 - Bu veriler dışındaki sorulara "Ben sadece sistemimdeki verilere göre cevap verebiliyorum. 📊" şeklinde cevap ver
 - Her zaman yardımsever ve profesyonel ol`;

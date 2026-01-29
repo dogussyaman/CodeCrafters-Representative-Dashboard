@@ -36,7 +36,7 @@ const mockRepresentatives = [
   {
     id: "1",
     name: "Ahmet Yılmaz",
-    email: "ahmet.yilmaz@digikoc.com",
+    email: "ahmet.yilmaz@codecrafters.com",
     phone: "+90 532 123 45 67",
     role: "Temsilci",
     unit: "SATIŞ BİRİMİ",
@@ -48,7 +48,7 @@ const mockRepresentatives = [
   {
     id: "2",
     name: "Ayşe Demir",
-    email: "ayse.demir@digikoc.com",
+    email: "ayse.demir@codecrafters.com",
     phone: "+90 533 234 56 78",
     role: "Temsilci",
     unit: "MÜŞTERİ HİZMETLERİ",
@@ -60,7 +60,7 @@ const mockRepresentatives = [
   {
     id: "3",
     name: "Mehmet Kaya",
-    email: "mehmet.kaya@digikoc.com",
+    email: "mehmet.kaya@codecrafters.com",
     phone: "+90 534 345 67 89",
     role: "Yönetici",
     unit: "İKAME HİZMETLERİ",
@@ -72,7 +72,7 @@ const mockRepresentatives = [
   {
     id: "4",
     name: "Fatma Şahin",
-    email: "fatma.sahin@digikoc.com",
+    email: "fatma.sahin@codecrafters.com",
     phone: "+90 535 456 78 90",
     role: "Temsilci",
     unit: "OPERASYON BİRİMİ",

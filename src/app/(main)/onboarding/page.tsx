@@ -8,8 +8,8 @@ import { useRouter } from "next/navigation"
 
 const onboardingSteps: OnboardingStep[] = [
     {
-        title: "DigiKoç: Akıllı Çalışma Asistanı",
-        description: "DigiKoç, müşteri temsilcilerinin verimliliğini artırmak için tasarlanmış bir akıllı çalışma asistanıdır. Süreçleri optimize ederek zaman yönetimini geliştirmeyi hedefler ve günlük iş akışlarınızı kolaylaştırarak daha fazla müşteriye hizmet etmenizi sağlar. Satış Birimi, Müşteri Hizmetleri, İkame Hizmetleri ve diğer tüm birimlerin operasyonlarını tek bir merkezden yönetmenize olanak tanır. Modern arayüzü ve yapay zeka desteği ile iş akışınızı güçlendirir.",
+        title: "CodeCrafters MT: Akıllı Çalışma Asistanı",
+        description: "CodeCrafters MT, müşteri temsilcilerinin verimliliğini artırmak için tasarlanmış bir akıllı çalışma asistanıdır. Süreçleri optimize ederek zaman yönetimini geliştirmeyi hedefler ve günlük iş akışlarınızı kolaylaştırarak daha fazla müşteriye hizmet etmenizi sağlar. Satış Birimi, Müşteri Hizmetleri, İkame Hizmetleri ve diğer tüm birimlerin operasyonlarını tek bir merkezden yönetmenize olanak tanır. Modern arayüzü ve yapay zeka desteği ile iş akışınızı güçlendirir.",
         icon: Rocket,
         image: "/onboarding/slide1.png",
         features: ["7 Farklı Birim Yönetimi", "Tek Panelden Tüm Operasyonlar", "Yapay Zeka Destekli Asistan", "Hazır Cümleler ve Şablonlar"],
@@ -19,17 +19,17 @@ const onboardingSteps: OnboardingStep[] = [
         description: "Operasyon verilerini analiz eden yapay zeka, otomatik süreç yönetimi ve kişiselleştirilmiş önerilerle tam kapsamlı destek sunar. Sistem, gerçek zamanlı veri işleme ve akıllı karar destek mekanizmaları ile çalışırken, kullanıcı deneyimini ön planda tutar. Kampanya yönetimi, yurtdışı işlemleri ve karşılama portalı gibi birim bazlı özel modüller ile her ihtiyaca uygun çözümler sunar.",
         icon: BrainCircuit,
         image: "/onboarding/slide2.png",
-        features: ["DigiBot AI Asistanı", "Birim Bazlı Hazır Cümleler", "Güvence Paketleri Yönetimi", "Fiyat Teklifi Hazırlama"],
+        features: ["CodeCrafters AI Asistanı", "Birim Bazlı Hazır Cümleler", "Güvence Paketleri Yönetimi", "Fiyat Teklifi Hazırlama"],
     },
     {
-        title: "Neden DigiKoç?",
-        description: "Müşteri temsilcileri karmaşık sistemler arasında kaybolurken, hem verimlilik hem de müşteri memnuniyeti düşüyor. DigiKoç, bu sorunu tek bir akıllı arayüzle çözüyor ve tüm ihtiyaçlarınızı merkezi bir platformda birleştirerek iş süreçlerinizi hızlandırıyor. Kurumsal yönlendirme, VIP talep yönetimi ve ikame operasyonları gibi özel süreçler için hazırlanmış modüller ile iş akışınızı optimize eder.",
+        title: "Neden CodeCrafters MT?",
+        description: "Müşteri temsilcileri karmaşık sistemler arasında kaybolurken, hem verimlilik hem de müşteri memnuniyeti düşüyor. CodeCrafters MT, bu sorunu tek bir akıllı arayüzle çözüyor ve tüm ihtiyaçlarınızı merkezi bir platformda birleştirerek iş süreçlerinizi hızlandırıyor. Kurumsal yönlendirme, VIP talep yönetimi ve ikame operasyonları gibi özel süreçler için hazırlanmış modüller ile iş akışınızı optimize eder.",
         icon: Layers,
         image: "/onboarding/slide3.png",
         features: ["Kampanya Yönetimi", "Genel Arama Özelliği", "Eğitim Modülleri", "Yardım ve Destek Sistemi"],
     },
     {
-        title: "DigiKoç'un Faydaları",
+        title: "CodeCrafters MT'nin Faydaları",
         description: "Müşteri temsilcileri zaman kaybından kurtarırken, hem verimlilik hem de müşteri memnuniyeti artar. Operasyonel verimlilik ve tutarlılığı standart süreçlerle sürekli hale getirir. Ayrıca, merkezi veri yapısı sayesinde bilgiye hızlı erişim sağlanır ve karar alma süreçleri hızlanır. Her birim için özel raporlama ve operasyon takip sistemleri ile detaylı analiz ve performans değerlendirmesi yapabilirsiniz.",
         icon: Sparkles,
         image: "/onboarding/slide4.png",
@@ -40,7 +40,7 @@ const onboardingSteps: OnboardingStep[] = [
         description: "Müşteri temsilcilerine etkili destek sağlayarak iş akışlarını optimize eder. Kullanıcı dostu arayüz ile soruları hızlıca yanıtlayın ve akıllı chatbot özelliği sayesinde anında yardım alın. Sistem, öğrenme algoritmaları ile kullanım alışkanlıklarınızı analiz ederek size özel çözümler sunar. Metin editörü ve şablon sistemi ile profesyonel içerikler oluşturabilir, bildirimler ile önemli güncellemelerden anında haberdar olabilirsiniz.",
         icon: Zap,
         image: "/onboarding/slide5.png",
-        features: ["Birimler Arası Geçiş", "Hazır Cümleler ile Hızlı Yanıt", "DigiBot ile Anında Yardım", "OD Talep ve İşlem Takibi"],
+        features: ["Birimler Arası Geçiş", "Hazır Cümleler ile Hızlı Yanıt", "Asistan ile Anında Yardım", "OD Talep ve İşlem Takibi"],
     },
     {
         title: "Güvenlik Altyapısı",
@@ -68,7 +68,7 @@ const onboardingSteps: OnboardingStep[] = [
         description: "Sürekli öğrenme ve anlık yardım sağlayan akıllı asistan ile performansınızı ve memnuniyetinizi artırın. Sistem, kullanım verilerinizi analiz ederek size özel öneriler sunar ve gelişim alanlarınızı belirler. 7/24 erişilebilir dijital destek ile ihtiyaç duyduğunuz her an yanınızda. Profil yönetimi, bildirim sistemi ve kişiselleştirilmiş dashboard ile kendi çalışma alanınızı oluşturabilir ve verimliliğinizi maksimize edebilirsiniz.",
         icon: ShieldCheck,
         image: "/onboarding/slide10.png",
-        quote: "Başarı, hazırlık ve fırsatın buluştuğu noktadır. DigiKoç ile her ikisi de yanınızda.",
+        quote: "Başarı, hazırlık ve fırsatın buluştuğu noktadır. CodeCrafters MT ile her ikisi de yanınızda.",
         features: ["Birim Bazlı Eğitim İçerikleri", "Kurumsal Satış Performans Takibi", "Operasyon Raporları", "AI Kullanım İstatistikleri"],
     },
 ];

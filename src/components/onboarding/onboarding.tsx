@@ -68,7 +68,7 @@ export function Onboarding({ steps, currentStep, onStepChange }: OnboardingProps
                         <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
                             <span className="font-bold text-lg">⌘</span>
                         </div>
-                        <span className="font-bold text-xl tracking-tight">DigiKoç</span>
+                        <span className="font-bold text-xl tracking-tight">CodeCrafters MT</span>
                     </div>
                     <Button variant="ghost" onClick={onSkip} className="text-muted-foreground hover:text-foreground">
                         Atla

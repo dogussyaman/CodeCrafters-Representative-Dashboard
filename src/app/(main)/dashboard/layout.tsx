@@ -47,7 +47,7 @@ export default async function DashboardLayout({ children }: { children: ReactNod
       ) : (
         <MTSidebar profile={profile} />
       )}
-      <SidebarInset>
+      <SidebarInset className="flex min-h-screen flex-col">
         <header className="flex h-12 shrink-0 items-center gap-2 border-b px-4 lg:px-6">
           <SidebarTrigger className="-ml-1" />
           <Separator orientation="vertical" className="mx-2 h-4" />
@@ -67,7 +67,7 @@ export default async function DashboardLayout({ children }: { children: ReactNod
             <ThemeSwitcher />
           </div>
         </header>
-        <div className="h-full p-4 md:p-6">{children}</div>
+        <main className="min-h-screen flex-1 p-4 md:p-6">{children}</main>
         <FooterWrapper />
       </SidebarInset>
     </SidebarProvider>

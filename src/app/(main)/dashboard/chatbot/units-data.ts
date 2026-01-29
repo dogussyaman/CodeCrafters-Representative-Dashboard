@@ -216,7 +216,7 @@ export const officeManagers = [
 
 // Yardım ve Destek Bilgileri
 export const helpSupportInfo = {
-    email: "destek@arackiralama.com",
+    email: "support@codecrafters.com",
     phone: "0850 123 45 67",
     workingHours: "08:30-18:00 (Hafta içi)",
     responseTime: "24 saat içinde",
@@ -233,8 +233,8 @@ export const faqData = [
         answer: "İlgili birimde 'Güvence Paketleri' menüsüne tıklayın. Burada tüm paket detaylarını, fiyatları ve kapsamları görebilirsiniz."
     },
     {
-        question: "DigiBot nasıl kullanılır?",
-        answer: "Üst menüden 'DigiBot' butonuna tıklayarak asistanı açabilirsiniz. DigiBot ile müşteri sorularına cevap hazırlayabilir, içerik üretebilir ve hızlı bilgi alabilirsiniz."
+        question: "Asistan nasıl kullanılır?",
+        answer: "Üst menüden 'Asistan' butonuna tıklayarak asistanı açabilirsiniz. Asistan ile müşteri sorularına cevap hazırlayabilir, içerik üretebilir ve hızlı bilgi alabilirsiniz."
     },
     {
         question: "Farklı birimlere nasıl geçiş yapılır?",

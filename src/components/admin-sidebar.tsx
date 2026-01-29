@@ -32,6 +32,7 @@ const adminMenuItems = [
   { title: "Eğitim Talepleri", href: "/dashboard/egitim-talepleri", icon: BookOpen },
   { title: "Rol Talepleri", href: "/dashboard/rol-talepleri", icon: UserCog },
   { title: "Şirket Talepleri", href: "/dashboard/sirket-talepleri", icon: Building2 },
+  { title: "Şirket oluştur", href: "/dashboard/sirket-olustur", icon: Building2 },
   { title: "Bildirimler", href: "/dashboard/bildirimler", icon: Bell },
   { title: "Kullanıcılar", href: "/dashboard/admin/kullanicilar", icon: Users },
   { title: "Temsilci Yönetimi", href: "/dashboard/admin/temsilci-yonetimi", icon: UserPlus },

@@ -5,6 +5,7 @@ import { formatDistanceToNow } from "date-fns";
 import { tr } from "date-fns/locale";
 import { Building2 } from "lucide-react";
 import { UpdateCompanyRequestForm } from "./_components/update-company-request-form";
+import { ApproveAndCreateCompanyButton } from "./_components/approve-and-create-company-button";
 
 const statusLabels: Record<string, string> = {
   pending: "Beklemede",
@@ -16,7 +17,7 @@ export default async function SirketTalepleriPage() {
   const supabase = await createClient();
   const { data: requests, error } = await supabase
     .from("company_requests")
-    .select("*")
+    .select("id, user_id, company_name, company_website, reason, status, created_company_id, created_at")
     .order("created_at", { ascending: false });
 
   if (error) {
@@ -54,6 +55,7 @@ export default async function SirketTalepleriPage() {
             company_website: string | null;
             reason: string;
             status: string;
+            created_company_id: string | null;
             created_at: string;
           }) => (
             <Card key={r.id}>
@@ -71,7 +73,14 @@ export default async function SirketTalepleriPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-sm whitespace-pre-wrap">{r.reason}</p>
-                <UpdateCompanyRequestForm requestId={r.id} currentStatus={r.status} />
+                <div className="flex flex-wrap items-center gap-3">
+                  <UpdateCompanyRequestForm requestId={r.id} currentStatus={r.status} />
+                  <ApproveAndCreateCompanyButton
+                    requestId={r.id}
+                    status={r.status}
+                    createdCompanyId={r.created_company_id}
+                  />
+                </div>
               </CardContent>
             </Card>
           ))
