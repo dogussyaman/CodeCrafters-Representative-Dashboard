@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import {
   Home,
   MessageSquare,
+  MessageCircle,
   Ticket,
   BookOpen,
   UserCog,
@@ -25,6 +26,7 @@ import { cn } from "@/lib/utils";
 
 const mtMenuItems = [
   { title: "Panel", href: "/dashboard", icon: Home },
+  { title: "Canlı Destek", href: "/dashboard/canli-destek", icon: MessageCircle },
   { title: "Destek Biletleri", href: "/dashboard/destek-biletleri", icon: Ticket },
   { title: "Asistan", href: "/dashboard/chatbot", icon: Bot },
   { title: "İletişim Mesajları", href: "/dashboard/iletisim-mesajlari", icon: MessageSquare },
