@@ -77,8 +77,8 @@ export function useChatMT(mtUserId: string | undefined) {
           table: "chat_messages",
           filter: `conversation_id=eq.${selectedConversationId}`,
         },
-        (payload) => {
-          const newRow = payload.new as ChatMessage;
+        (payload: { new: ChatMessage }) => {
+          const newRow = payload.new;
           setMessages((prev) =>
             prev.some((m) => m.id === newRow.id) ? prev : [...prev, newRow]
           );
