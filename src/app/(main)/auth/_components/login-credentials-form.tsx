@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Spinner } from "@/components/ui/spinner";
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Control } from "react-hook-form";
@@ -77,6 +78,7 @@ export function LoginCredentialsForm({ control, onSubmit, isLoading }: LoginCred
                 )}
             />
             <Button className="w-full" type="submit" disabled={isLoading}>
+                {isLoading && <Spinner className="mr-2 size-4" />}
                 {isLoading ? "Giriş yapılıyor…" : "Giriş Yap"}
             </Button>
         </form>

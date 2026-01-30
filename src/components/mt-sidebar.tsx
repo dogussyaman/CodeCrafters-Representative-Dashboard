@@ -64,17 +64,21 @@ export function MTSidebar({ profile }: MTSidebarProps) {
         <SidebarMenu>
           {mtMenuItems.map((item) => {
             const Icon = item.icon;
-            const isActive = pathname === item.href;
+            const isRoot = item.href === "/dashboard";
+            const isActive = isRoot
+              ? pathname === item.href
+              : pathname === item.href || pathname.startsWith(item.href + "/");
             return (
               <SidebarMenuItem key={item.href}>
                 <SidebarMenuButton asChild isActive={isActive} tooltip={item.title}>
                   <Link
                     href={item.href}
+                    aria-current={isActive ? "page" : undefined}
                     className={cn(
-                      "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                      "flex items-center gap-3 rounded-lg border-l-2 border-transparent px-3 py-2 text-sm font-medium transition-colors duration-150",
                       isActive
-                        ? "bg-primary text-primary-foreground"
-                        : "text-muted-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+                        ? "border-primary bg-primary text-primary-foreground"
+                        : "text-muted-foreground hover:bg-sidebar-accent hover:text-foreground"
                     )}
                   >
                     <Icon className="size-5 shrink-0" />
