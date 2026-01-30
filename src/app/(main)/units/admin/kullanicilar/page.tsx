@@ -1,8 +1,0 @@
-export default function Page() {
-  return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">KULLANICILAR</h1>
-      <p className="text-muted-foreground">Bu sayfa yapım aşamasındadır.</p>
-    </div>
-  );
-}

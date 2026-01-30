@@ -7,14 +7,15 @@ export async function generateStaticParams() {
     }));
 }
 
-export default function UnitLayout({
+export default async function UnitLayout({
     children,
     params,
 }: {
     children: React.ReactNode;
-    params: { unitSlug: string };
+    params: Promise<{ unitSlug: string }>;
 }) {
-    const unit = COMPANY_CONFIG.units.find((u) => u.slug === params.unitSlug);
+    const { unitSlug } = await params;
+    const unit = COMPANY_CONFIG.units.find((u) => u.slug === unitSlug);
 
     if (!unit) {
         notFound();
