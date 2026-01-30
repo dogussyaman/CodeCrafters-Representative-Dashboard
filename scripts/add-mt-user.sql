@@ -1,7 +1,8 @@
 -- ============================================
--- MT kullanıcısı ekleme (şifre: Yaman.9645)
+-- MT kullanıcısı ekleme (örnek)
 -- Supabase Dashboard > SQL Editor'da çalıştırın.
--- Giriş: Email aşağıdaki gibi, şifre: Yaman.9645
+-- Şifreyi mutlaka değiştirin: aşağıdaki 'CHANGE_ME' yerine güçlü bir şifre yazın.
+-- Giriş: mt@codecrafters.local ve belirlediğiniz şifre.
 -- ============================================
 
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
@@ -24,7 +25,7 @@ INSERT INTO auth.users (
   'authenticated',
   'authenticated',
   'mt@codecrafters.local',
-  crypt('Yaman.9645', gen_salt('bf')),
+  crypt('CHANGE_ME', gen_salt('bf')),
   now(),
   now(),
   now(),

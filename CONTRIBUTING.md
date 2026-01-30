@@ -1,6 +1,6 @@
-# Contributing to Studio Admin
+# Contributing to CodeCrafters MT Dashboard
 
-Thanks for showing interest in improving **Studio Admin** (repo: `next-shadcn-admin-dashboard`).  
+Thanks for showing interest in improving **CodeCrafters MT Dashboard**.  
 This guide will help you set up your environment and understand how to contribute.
 
 ---
@@ -8,7 +8,7 @@ This guide will help you set up your environment and understand how to contribut
 ## Overview
 
 This project is built with **Next.js 16**, **TypeScript**, **Tailwind CSS v4**, and **Shadcn UI**.  
-The goal is to keep the codebase modular, scalable, and easy to extend.
+The goal is to keep the codebase modular, scalable, and easy to extend. CodeCrafters MT Dashboard is the customer representative (MT) and admin panel for the CodeCrafters platform, sharing the same Supabase project.
 
 ---
 
@@ -42,18 +42,16 @@ If you’d like a more detailed example of this setup, check out the [Next Coloc
 
 ### Fork and Clone the Repository
 
-1. Fork the Repository
-   
-   Click [here](https://github.com/arhamkhnz/next-shadcn-admin-dashboard/fork) to fork the repository.
+1. Fork the CodeCrafters MT Dashboard repository.
 
 2. Clone the Repository  
    ```bash
-   git clone https://github.com/YOUR_USERNAME/next-shadcn-admin-dashboard.git
+   git clone https://github.com/YOUR_USERNAME/codecrafters-mt-dashboard.git
    ```
    
 3. Navigate into the Project  
    ```bash
-   cd next-shadcn-admin-dashboard
+   cd codecrafters-mt-dashboard
    ```
 
 4. **Install dependencies**
@@ -118,7 +116,7 @@ If you’d like a more detailed example of this setup, check out the [Next Coloc
 
 ## Questions & Support
 
-- Report bugs, suggestions, or issues via [GitHub Issues](https://github.com/arhamkhnz/next-shadcn-admin-dashboard/issues)
+- Report bugs, suggestions, or issues via the project’s GitHub Issues.
 
 ---
 
