@@ -72,9 +72,11 @@ export function ChatPanelMT({ mtUserId }: ChatPanelMTProps) {
               loading={loadingMessages}
             />
             <ChatMessageInputMT
-              onSend={sendMessage}
+              onSend={(content, urls) => sendMessage(content, urls)}
               disabled={sending}
               placeholder="Yanıt yazın..."
+              conversationId={selectedConversationId}
+              userId={mtUserId}
             />
           </>
         ) : (
