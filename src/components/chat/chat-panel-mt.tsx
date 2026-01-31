@@ -34,7 +34,7 @@ export function ChatPanelMT({ mtUserId }: ChatPanelMTProps) {
     selectedConversation.status !== "closed";
 
   return (
-    <div className="flex h-[calc(100vh-8rem)] min-h-[400px] overflow-hidden rounded-lg border border-border bg-card">
+    <div className="flex h-full min-h-[400px] overflow-hidden rounded-lg border border-border bg-card">
       <div className="w-64 shrink-0 md:w-72">
         <ChatConversationListMT
           conversations={conversations}
@@ -46,7 +46,7 @@ export function ChatPanelMT({ mtUserId }: ChatPanelMTProps) {
           assigning={sending}
         />
       </div>
-      <div className="flex flex-1 flex-col min-w-0">
+      <div className="flex min-h-0 flex-1 flex-col min-w-0">
         {selectedConversationId ? (
           <>
             <div className="flex shrink-0 items-center justify-between gap-2 border-b border-border px-4 py-2">
@@ -66,11 +66,13 @@ export function ChatPanelMT({ mtUserId }: ChatPanelMTProps) {
                 </Button>
               )}
             </div>
-            <ChatMessageListMT
-              messages={messages}
-              currentUserId={mtUserId}
-              loading={loadingMessages}
-            />
+            <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
+              <ChatMessageListMT
+                messages={messages}
+                currentUserId={mtUserId}
+                loading={loadingMessages}
+              />
+            </div>
             <ChatMessageInputMT
               onSend={(content, urls) => sendMessage(content, urls)}
               disabled={sending}

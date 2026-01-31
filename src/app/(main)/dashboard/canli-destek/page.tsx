@@ -22,15 +22,17 @@ export default async function CanliDestekPage() {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center gap-2">
+    <div className="flex flex-col h-[calc(100vh-6rem)] min-h-[480px]">
+      <div className="flex shrink-0 items-center gap-2">
         <MessageCircle className="size-6 text-primary" />
         <h1 className="text-2xl font-bold">Canlı Destek</h1>
       </div>
-      <p className="text-sm text-muted-foreground">
+      <p className="mb-2 shrink-0 text-sm text-muted-foreground">
         CodeCrafters kullanıcılarıyla anlık sohbet. Sohbet seçin, &quot;Üstlen&quot; ile konuşmayı alın.
       </p>
-      <ChatPanelMT mtUserId={user.id} />
+      <div className="min-h-0 flex-1 overflow-hidden">
+        <ChatPanelMT mtUserId={user.id} />
+      </div>
     </div>
   );
 }
