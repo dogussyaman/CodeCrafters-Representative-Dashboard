@@ -67,7 +67,7 @@ export default async function DashboardLayout({ children }: { children: ReactNod
             <ThemeSwitcher />
           </div>
         </header>
-        <main className="min-h-screen flex-1 p-4 md:p-6">{children}</main>
+        <main className="flex-1 flex flex-col min-h-0 p-4 md:p-6">{children}</main>
         <FooterWrapper />
       </SidebarInset>
     </SidebarProvider>

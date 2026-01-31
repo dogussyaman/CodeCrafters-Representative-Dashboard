@@ -1,11 +1,32 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { createClient } from "@/lib/supabase/client";
 import { useChatMT } from "@/hooks/use-chat-mt";
 import { ChatConversationListMT } from "./chat-conversation-list-mt";
 import { ChatMessageListMT } from "./chat-message-list-mt";
 import { ChatMessageInputMT } from "./chat-message-input-mt";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
+
+type ProfileRow = { full_name: string | null; role: string | null } | null;
+
+function roleToLabel(role: string | null | undefined): string {
+  if (!role) return "Kullanıcı";
+  switch (role) {
+    case "developer":
+      return "Geliştirici";
+    case "hr":
+      return "İK";
+    case "company_admin":
+      return "Şirket";
+    case "admin":
+    case "platform_admin":
+      return "Yönetici";
+    default:
+      return "Kullanıcı";
+  }
+}
 
 interface ChatPanelMTProps {
   mtUserId: string;
@@ -25,9 +46,31 @@ export function ChatPanelMT({ mtUserId }: ChatPanelMTProps) {
     sendMessage,
   } = useChatMT(mtUserId);
 
+  const [otherPartyLabel, setOtherPartyLabel] = useState<string>("Kullanıcı");
+
   const selectedConversation = selectedConversationId
     ? conversations.find((c) => c.id === selectedConversationId)
     : null;
+
+  useEffect(() => {
+    if (!selectedConversation?.participant_user_id) {
+      setOtherPartyLabel("Kullanıcı");
+      return;
+    }
+    const participantId = selectedConversation.participant_user_id;
+    const supabase = createClient();
+    supabase
+      .from("profiles")
+      .select("full_name, role")
+      .eq("id", participantId)
+      .single()
+      .then(({ data }: { data: ProfileRow }) => {
+        const name = (data?.full_name ?? "").trim();
+        setOtherPartyLabel(name || roleToLabel(data?.role));
+      })
+      .catch(() => setOtherPartyLabel("Kullanıcı"));
+  }, [selectedConversation?.participant_user_id]);
+
   const canClose =
     selectedConversation &&
     selectedConversation.mt_user_id === mtUserId &&
@@ -35,7 +78,7 @@ export function ChatPanelMT({ mtUserId }: ChatPanelMTProps) {
 
   return (
     <div className="flex h-full min-h-[400px] overflow-hidden rounded-lg border border-border bg-card">
-      <div className="w-64 shrink-0 md:w-72">
+      <div className="flex min-h-0 w-64 shrink-0 flex-col overflow-hidden md:w-72">
         <ChatConversationListMT
           conversations={conversations}
           selectedId={selectedConversationId}
@@ -71,6 +114,8 @@ export function ChatPanelMT({ mtUserId }: ChatPanelMTProps) {
                 messages={messages}
                 currentUserId={mtUserId}
                 loading={loadingMessages}
+                otherPartyLabel={otherPartyLabel}
+                participantUserId={selectedConversation?.participant_user_id ?? undefined}
               />
             </div>
             <ChatMessageInputMT

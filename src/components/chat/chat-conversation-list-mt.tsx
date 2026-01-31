@@ -35,12 +35,13 @@ export function ChatConversationListMT({
   assigning,
 }: ChatConversationListMTProps) {
   return (
-    <div className="flex h-full flex-col border-r border-border bg-muted/30">
+    <div className="flex h-full min-w-0 flex-col border-r border-border bg-muted/30">
       <div className="shrink-0 border-b border-border p-3">
         <span className="text-sm font-medium">Canlı destek kuyruğu</span>
       </div>
-      <ScrollArea className="flex-1">
-        <div className="flex flex-col gap-0.5 p-2">
+      <div className="flex-1 min-h-0 overflow-hidden">
+        <ScrollArea className="h-full">
+          <div className="flex flex-col gap-0.5 p-2">
           {loading && conversations.length === 0 ? (
             <div className="space-y-2 p-2">
               {[1, 2, 3, 4].map((i) => (
@@ -106,7 +107,8 @@ export function ChatConversationListMT({
             })
           )}
         </div>
-      </ScrollArea>
+        </ScrollArea>
+      </div>
     </div>
   );
 }

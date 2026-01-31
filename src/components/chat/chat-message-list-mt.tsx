@@ -11,12 +11,17 @@ interface ChatMessageListMTProps {
   messages: ChatMessage[];
   currentUserId: string;
   loading?: boolean;
+  otherPartyLabel?: string;
+  /** Konuşmanın müşteri (participant) kullanıcı id'si; verilirse "Siz" sadece participant olmayan gönderenler için. */
+  participantUserId?: string | null;
 }
 
 export function ChatMessageListMT({
   messages,
   currentUserId,
   loading,
+  otherPartyLabel,
+  participantUserId,
 }: ChatMessageListMTProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const prevLastIdRef = useRef<string | null>(null);
@@ -67,7 +72,9 @@ export function ChatMessageListMT({
     >
       <div className="flex flex-col gap-4 p-4">
         {messages.map((m) => {
-          const isOwn = m.sender_id === currentUserId;
+          const isOwn =
+            m.sender_id === currentUserId &&
+            (participantUserId == null || m.sender_id !== participantUserId);
           return (
             <div
               key={m.id}
@@ -75,7 +82,7 @@ export function ChatMessageListMT({
             >
               <Avatar className="size-8 shrink-0">
                 <AvatarFallback className="text-xs">
-                  {isOwn ? "Siz" : "Kullanıcı"}
+                  {isOwn ? "Siz" : (otherPartyLabel ?? "Kullanıcı")}
                 </AvatarFallback>
               </Avatar>
               <div

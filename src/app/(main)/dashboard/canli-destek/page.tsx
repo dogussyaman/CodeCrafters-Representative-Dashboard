@@ -22,7 +22,7 @@ export default async function CanliDestekPage() {
   }
 
   return (
-    <div className="flex flex-col h-[calc(100vh-6rem)] min-h-[480px]">
+    <div className="flex flex-1 flex-col min-h-0 overflow-hidden">
       <div className="flex shrink-0 items-center gap-2">
         <MessageCircle className="size-6 text-primary" />
         <h1 className="text-2xl font-bold">Canlı Destek</h1>
