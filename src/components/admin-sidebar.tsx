@@ -14,6 +14,7 @@ import {
   Users,
   UserPlus,
   BarChart3,
+  Mail,
 } from "lucide-react";
 import {
   Sidebar,
@@ -36,6 +37,7 @@ const adminMenuItems = [
   { title: "Şirket Talepleri", href: "/dashboard/sirket-talepleri", icon: Building2 },
   { title: "Şirket oluştur", href: "/dashboard/sirket-olustur", icon: Building2 },
   { title: "Bildirimler", href: "/dashboard/bildirimler", icon: Bell },
+  { title: "Bülten", href: "/dashboard/bulten", icon: Mail },
   { title: "Kullanıcılar", href: "/dashboard/admin/kullanicilar", icon: Users },
   { title: "Temsilci Yönetimi", href: "/dashboard/admin/temsilci-yonetimi", icon: UserPlus },
   { title: "İstatistikler", href: "/dashboard/admin/istatistikler", icon: BarChart3 },
