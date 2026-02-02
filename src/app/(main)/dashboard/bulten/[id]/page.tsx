@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
+import { sanitizeHtml } from "@/lib/sanitize";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -35,13 +36,15 @@ export default function BultenDetailPage() {
       .select("id, title, image_url, body_html, links, created_at, sent_at")
       .eq("id", id)
       .single()
-      .then(({ data, error }) => {
+      .then((res: { data: unknown; error: unknown }) => {
+        const { data, error } = res;
         if (error || !data) {
           setCampaign(null);
         } else {
+          const row = data as Record<string, unknown>;
           setCampaign({
-            ...data,
-            links: Array.isArray(data.links) ? data.links : [],
+            ...row,
+            links: Array.isArray(row.links) ? row.links : [],
           } as Campaign);
         }
         setLoading(false);
@@ -151,7 +154,7 @@ export default function BultenDetailPage() {
               <p className="text-sm font-medium text-muted-foreground mb-1">Detay</p>
               <div
                 className="rounded-lg border border-border p-4 bg-muted/30 text-sm prose prose-sm dark:prose-invert max-w-none"
-                dangerouslySetInnerHTML={{ __html: campaign.body_html }}
+                dangerouslySetInnerHTML={{ __html: sanitizeHtml(campaign.body_html ?? "") }}
               />
             </div>
           )}

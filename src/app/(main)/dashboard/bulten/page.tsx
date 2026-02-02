@@ -28,7 +28,8 @@ export default function BultenPage() {
       .from("newsletter_campaigns")
       .select("id, title, image_url, body_html, links, created_at, sent_at")
       .order("created_at", { ascending: false })
-      .then(({ data, error }) => {
+      .then((res: { data: unknown; error: unknown }) => {
+        const { data, error } = res;
         if (!error && data) setCampaigns(data as Campaign[]);
         setLoading(false);
       });

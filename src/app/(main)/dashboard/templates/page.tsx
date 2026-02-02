@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useTemplates } from "@/hooks/use-templates";
+import { sanitizeHtml } from "@/lib/sanitize";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -149,7 +150,7 @@ export default function TemplatesPage() {
                         <CardContent>
                           <div
                             className="text-sm text-muted-foreground line-clamp-3 bg-muted/30 p-3 rounded-md"
-                            dangerouslySetInnerHTML={{ __html: template.content }}
+                            dangerouslySetInnerHTML={{ __html: sanitizeHtml(template.content ?? "") }}
                           />
                         </CardContent>
                       </Card>

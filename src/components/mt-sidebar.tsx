@@ -13,6 +13,7 @@ import {
   Bell,
   Bot,
   Mail,
+  Library,
 } from "lucide-react";
 import {
   Sidebar,
@@ -37,6 +38,7 @@ const mtMenuItems = [
   { title: "Şirket oluştur", href: "/dashboard/sirket-olustur", icon: Building2 },
   { title: "Bildirimler", href: "/dashboard/bildirimler", icon: Bell },
   { title: "Bülten", href: "/dashboard/bulten", icon: Mail },
+  { title: "Terimler", href: "/dashboard/terimler", icon: Library },
 ];
 
 interface MTSidebarProps {
