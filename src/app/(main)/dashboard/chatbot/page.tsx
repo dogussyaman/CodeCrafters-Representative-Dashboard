@@ -91,7 +91,7 @@ export default function ChatbotPage() {
     <div className="min-h-screen">
       <div className="max-w-5xl mx-auto min-h-screen flex flex-col">
         {/* Messages */}
-        <div className="flex-1 overflow-y-auto px-6 pt-10 pb-6 space-y-6">
+        <div className="flex-1 overflow-y-auto px-6 pt-10 pb-6 space-y-6 ">
           {messages.map((message, index) => (
             <div
               key={index}
