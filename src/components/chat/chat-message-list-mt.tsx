@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import type { ChatMessage } from "@/types/chat";
@@ -14,6 +13,8 @@ interface ChatMessageListMTProps {
   otherPartyLabel?: string;
   /** Konuşmanın müşteri (participant) kullanıcı id'si; verilirse "Siz" sadece participant olmayan gönderenler için. */
   participantUserId?: string | null;
+  /** Scroll container parent'ta; sadece içerik render edilir (scroll sorununu önlemek için) */
+  contentOnly?: boolean;
 }
 
 export function ChatMessageListMT({
@@ -22,22 +23,8 @@ export function ChatMessageListMT({
   loading,
   otherPartyLabel,
   participantUserId,
+  contentOnly,
 }: ChatMessageListMTProps) {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const prevLastIdRef = useRef<string | null>(null);
-
-  useEffect(() => {
-    const lastId = messages.length > 0 ? messages[messages.length - 1].id : null;
-    if (lastId != null && lastId !== prevLastIdRef.current) {
-      const el = scrollContainerRef.current;
-      if (el) {
-        el.scrollTo({ top: el.scrollHeight, behavior: "smooth" });
-      }
-      prevLastIdRef.current = lastId;
-    }
-    if (lastId == null) prevLastIdRef.current = null;
-  }, [messages]);
-
   if (loading) {
     return (
       <div className="flex flex-1 items-center justify-center p-4">
@@ -65,13 +52,14 @@ export function ChatMessageListMT({
     );
   }
 
-  return (
+  const content = (
     <div
-      ref={scrollContainerRef}
-      className="h-full min-h-0 flex-1 overflow-y-auto overflow-x-hidden"
+      className={cn(
+        "flex flex-col gap-4 p-4",
+        !contentOnly && "h-full min-h-0 flex-1"
+      )}
     >
-      <div className="flex flex-col gap-4 p-4">
-        {messages.map((m) => {
+      {messages.map((m) => {
           const isOwn =
             m.sender_id === currentUserId &&
             (participantUserId == null || m.sender_id !== participantUserId);
@@ -125,7 +113,7 @@ export function ChatMessageListMT({
             </div>
           );
         })}
-      </div>
     </div>
   );
+  return content;
 }
