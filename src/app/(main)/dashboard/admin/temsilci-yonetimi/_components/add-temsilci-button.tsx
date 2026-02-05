@@ -24,7 +24,7 @@ export function AddTemsilciButton() {
         <DialogHeader>
           <DialogTitle>Temsilci ekleme</DialogTitle>
           <DialogDescription>
-            Yeni müşteri temsilcisi oluşturmak için Supabase Dashboard veya CodeCrafters ana uygulamasındaki admin panelini kullanın. Auth kullanıcısı oluşturulduktan sonra &quot;profiles&quot; tablosunda ilgili kullanıcının &quot;role&quot; alanını &quot;mt&quot; olarak güncelleyin.
+            Yeni müşteri temsilcisi oluşturmak için Supabase Dashboard veya CodeCraftX ana uygulamasındaki admin panelini kullanın. Auth kullanıcısı oluşturulduktan sonra &quot;profiles&quot; tablosunda ilgili kullanıcının &quot;role&quot; alanını &quot;mt&quot; olarak güncelleyin.
           </DialogDescription>
         </DialogHeader>
       </DialogContent>

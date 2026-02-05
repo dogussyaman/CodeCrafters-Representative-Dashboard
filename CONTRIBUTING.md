@@ -1,6 +1,6 @@
-# Contributing to CodeCrafters MT Dashboard
+# Contributing to CodeCraftX MT Dashboard
 
-Thanks for showing interest in improving **CodeCrafters MT Dashboard**.  
+Thanks for showing interest in improving **CodeCraftX MT Dashboard**.  
 This guide will help you set up your environment and understand how to contribute.
 
 ---
@@ -8,7 +8,7 @@ This guide will help you set up your environment and understand how to contribut
 ## Overview
 
 This project is built with **Next.js 16**, **TypeScript**, **Tailwind CSS v4**, and **Shadcn UI**.  
-The goal is to keep the codebase modular, scalable, and easy to extend. CodeCrafters MT Dashboard is the customer representative (MT) and admin panel for the CodeCrafters platform, sharing the same Supabase project.
+The goal is to keep the codebase modular, scalable, and easy to extend. CodeCraftX MT Dashboard is the customer representative (MT) and admin panel for the CodeCraftX platform, sharing the same Supabase project.
 
 ---
 
@@ -42,16 +42,16 @@ If you’d like a more detailed example of this setup, check out the [Next Coloc
 
 ### Fork and Clone the Repository
 
-1. Fork the CodeCrafters MT Dashboard repository.
+1. Fork the CodeCraftX MT Dashboard repository.
 
 2. Clone the Repository  
    ```bash
-   git clone https://github.com/YOUR_USERNAME/codecrafters-mt-dashboard.git
+   git clone https://github.com/YOUR_USERNAME/codecraftx-mt-dashboard.git
    ```
    
 3. Navigate into the Project  
    ```bash
-   cd codecrafters-mt-dashboard
+   cd codecraftx-mt-dashboard
    ```
 
 4. **Install dependencies**

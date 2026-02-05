@@ -60,7 +60,7 @@ export function AdminSidebar({ profile }: AdminSidebarProps) {
             <SidebarMenuButton size="lg" asChild>
               <Link href="/dashboard/admin">
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-semibold text-base">CodeCrafters MT</span>
+                  <span className="truncate font-semibold text-base">CodeCraftX MT</span>
                   <span className="truncate text-xs text-muted-foreground">Yönetici</span>
                 </div>
               </Link>

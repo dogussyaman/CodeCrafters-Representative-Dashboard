@@ -11,7 +11,7 @@ export function AppFooter() {
           <div className="text-center sm:text-left">
             <p className="text-sm font-medium">{APP_CONFIG.name}</p>
             <p className="text-xs text-muted-foreground">
-              CodeCrafters MT paneli · Destek biletleri ve talepler
+              CodeCraftX MT paneli · Destek biletleri ve talepler
             </p>
           </div>
           <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1 text-sm">

@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: PageProps) {
   }
   const normalized = normalizeLetter(letter)!;
   const title = getSiteTitle(`${TERMS_PAGE_TITLE} - ${normalized}`);
-  const description = `${normalized} harfi ile başlayan terimler. CodeCrafters MT paneli terimler sözlüğü.`;
+  const description = `${normalized} harfi ile başlayan terimler. CodeCraftX MT paneli terimler sözlüğü.`;
   const path = `${TERMS_BASE_PATH}/${normalized.toLowerCase()}`;
 
   return buildPageMetadata({

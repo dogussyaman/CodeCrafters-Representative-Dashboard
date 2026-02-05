@@ -15,12 +15,12 @@ import {
 export default function DefaultDashboardPage() {
   return (
     <div className="mx-auto max-w-5xl space-y-10 p-2 md:p-0">
-      {/* Hero - CodeCrafters MT */}
+      {/* Hero - CodeCraftX MT */}
       <section className="relative overflow-hidden rounded-2xl border bg-linear-to-br from-primary/10 via-background to-primary/5 p-6 md:p-10">
         <div className="relative z-10 space-y-4 text-center md:text-left">
           <div className="inline-flex items-center gap-2 rounded-full border bg-background/80 px-3 py-1 text-xs font-medium">
             <GraduationCap className="h-3.5 w-3.5" />
-            CodeCrafters MT Dashboard
+            CodeCraftX MT Dashboard
           </div>
           <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
             Destek Biletleri ve Talepler
@@ -51,7 +51,7 @@ export default function DefaultDashboardPage() {
         </div>
       </section>
 
-      {/* Ana ekranlar - CodeCrafters MT */}
+      {/* Ana ekranlar - CodeCraftX MT */}
       <section className="space-y-4">
         <h2 className="text-xl font-semibold">Ana Ekranlar</h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

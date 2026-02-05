@@ -32,7 +32,7 @@ export default async function TemsilciYonetimiPage() {
             Temsilci Yönetimi
           </h1>
           <p className="text-muted-foreground text-sm mt-1">
-            Müşteri temsilcisi (MT) kullanıcıları. Yeni temsilci Supabase Dashboard veya CodeCrafters ana uygulaması üzerinden oluşturulabilir; profilde role &quot;mt&quot; atanır.
+            Müşteri temsilcisi (MT) kullanıcıları. Yeni temsilci Supabase Dashboard veya CodeCraftX ana uygulaması üzerinden oluşturulabilir; profilde role &quot;mt&quot; atanır.
           </p>
         </div>
         <AddTemsilciButton />

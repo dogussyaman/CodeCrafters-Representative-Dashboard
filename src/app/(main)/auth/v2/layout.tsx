@@ -22,13 +22,13 @@ export default function Layout({ children }: Readonly<{ children: ReactNode }>) 
 
           <div className="absolute bottom-10 flex w-full justify-between px-10">
             <div className="text-primary-foreground flex-1 space-y-1">
-              <h2 className="font-medium">CodeCrafters MT ile hızlı çözüme hazır mısınız?</h2>
+              <h2 className="font-medium">CodeCraftX MT ile hızlı çözüme hazır mısınız?</h2>
               <p className="text-sm">Akıllı bot ile hızlı çözümler alın. Müşterilerinizi daha iyi hizmet edin.</p>
             </div>
             <Separator orientation="vertical" className="mx-3 h-auto!" />
             <div className="text-primary-foreground flex-1 space-y-1">
               <h2 className="font-medium">Yardıma mı ihtiyacınız var?</h2>
-              <p className="text-sm">CodeCrafters MT ile soru sormak ve destek almak için bize ulaşın.</p>
+              <p className="text-sm">CodeCraftX MT ile soru sormak ve destek almak için bize ulaşın.</p>
             </div>
           </div>
         </div>

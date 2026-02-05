@@ -99,7 +99,7 @@ export default async function DashboardPage() {
             Destek Biletlerinde Ne Yapılır?
           </h1>
           <p className="max-w-2xl text-muted-foreground">
-            CodeCrafters destek sisteminde bilet tipleri, durumlar ve MT olarak sizin adımlarınızı aşağıda özetledik. Hızlı erişim için istatistik kartlarını kullanın.
+            CodeCraftX destek sisteminde bilet tipleri, durumlar ve MT olarak sizin adımlarınızı aşağıda özetledik. Hızlı erişim için istatistik kartlarını kullanın.
           </p>
           <div className="flex flex-wrap gap-3 pt-2">
             <Button asChild>
@@ -340,7 +340,7 @@ export default async function DashboardPage() {
               </li>
               <li className="flex gap-2">
                 <span className="text-primary font-medium shrink-0">3.</span>
-                Çözüm sonrası kullanıcıya e-posta veya bildirimle bilgi vermeyi unutmayın (CodeCrafters tarafında bildirim entegrasyonu varsa otomatik gidebilir).
+                Çözüm sonrası kullanıcıya e-posta veya bildirimle bilgi vermeyi unutmayın (CodeCraftX tarafında bildirim entegrasyonu varsa otomatik gidebilir).
               </li>
               <li className="flex gap-2">
                 <span className="text-primary font-medium shrink-0">4.</span>

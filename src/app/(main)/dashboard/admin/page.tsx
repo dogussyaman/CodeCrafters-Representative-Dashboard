@@ -50,7 +50,7 @@ export default async function AdminDashboardPage() {
     <div className="space-y-8">
       <div className="space-y-2">
         <h1 className="text-3xl font-bold tracking-tight">Yönetici Paneli</h1>
-        <p className="text-muted-foreground">CodeCrafters MT Dashboard yönetimi ve istatistikler</p>
+        <p className="text-muted-foreground">CodeCraftX MT Dashboard yönetimi ve istatistikler</p>
       </div>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {cards.map((item) => {

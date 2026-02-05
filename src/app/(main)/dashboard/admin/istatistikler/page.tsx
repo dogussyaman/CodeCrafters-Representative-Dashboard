@@ -46,7 +46,7 @@ export default async function IstatistiklerPage() {
           İstatistikler
         </h1>
         <p className="text-muted-foreground text-sm mt-1">
-          CodeCrafters MT Dashboard özet istatistikleri
+          CodeCraftX MT Dashboard özet istatistikleri
         </p>
       </div>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">

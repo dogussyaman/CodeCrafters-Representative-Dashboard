@@ -49,7 +49,7 @@ export default function HelpPage() {
             <Lightbulb className="h-5 w-5 text-primary" />
             <CardTitle>Hızlı Başlangıç Rehberi</CardTitle>
           </div>
-          <CardDescription>CodeCrafters MT panelini kullanmaya başlama adımları</CardDescription>
+          <CardDescription>CodeCraftX MT panelini kullanmaya başlama adımları</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid gap-4 md:grid-cols-2">

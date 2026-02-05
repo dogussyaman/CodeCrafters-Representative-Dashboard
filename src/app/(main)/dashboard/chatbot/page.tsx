@@ -139,7 +139,7 @@ export default function ChatbotPage() {
             <div className="flex flex-col items-center justify-center min-h-[600px] gap-2">
               <div className='flex flex-col items-center justify-center gap-2'>
                 <div className="flex flex-col items-center justify-center gap-2">
-                  <h1 className="text-2xl font-bold">Merhaba, CodeCrafters MT Asistanı</h1>
+                  <h1 className="text-2xl font-bold">Merhaba, CodeCraftX MT Asistanı</h1>
                   <p className="text-slate-500 text-sm">Destek biletleri ve MT iş akışı hakkında soru sorun 📝</p>
                   <p className="text-slate-500 text-sm">Bilet tipleri, durumlar, atama ve çözüm notu konularında yardımcı olabilirim. 📊</p>
                 </div>

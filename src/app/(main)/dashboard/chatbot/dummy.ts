@@ -85,7 +85,7 @@ import {
     faqData
 } from "./units-data";
 
-export const systemPrompt = `Sen CodeCrafters MT Asistanı'sın. Müşteri temsilcilerine (MT) destek biletleri ve iş akışı konusunda yetenekli, profesyonel ve dostça yardımcı ol.
+export const systemPrompt = `Sen CodeCraftX MT Asistanı'sın. Müşteri temsilcilerine (MT) destek biletleri ve iş akışı konusunda yetenekli, profesyonel ve dostça yardımcı ol.
 Cevap verirken emoji kullan.
 
 ÖNEMLİ KURALLAR:

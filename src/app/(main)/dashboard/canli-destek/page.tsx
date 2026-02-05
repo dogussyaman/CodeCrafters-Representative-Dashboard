@@ -28,7 +28,7 @@ export default async function CanliDestekPage() {
         <h1 className="text-2xl font-bold">Canlı Destek</h1>
       </div>
       <p className="mb-2 shrink-0 text-sm text-muted-foreground">
-        CodeCrafters kullanıcılarıyla anlık sohbet. Sohbet seçin, &quot;Üstlen&quot; ile konuşmayı alın.
+        CodeCraftX kullanıcılarıyla anlık sohbet. Sohbet seçin, &quot;Üstlen&quot; ile konuşmayı alın.
       </p>
       {/* Sabit max yükseklik: chat alanı büyümez, scroll container içinde kayar */}
       <div className="flex min-h-[320px] max-h-[calc(100vh-8rem)] flex-1 flex-col overflow-hidden">
