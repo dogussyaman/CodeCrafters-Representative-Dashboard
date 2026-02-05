@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Plus } from "lucide-react";
 import { siApple, siPaypal, siOpenai, siVercel, siFigma } from "simple-icons";
 
@@ -9,6 +10,7 @@ import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle }
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { formatCurrency, cn } from "@/lib/utils";
+import { createClient } from "@/lib/supabase/client";
 
 function ChipSVG() {
   return (
@@ -25,7 +27,17 @@ function ChipSVG() {
   );
 }
 
-const recentPayments = [
+type RecentPayment = {
+  id: string | number;
+  icon: typeof siPaypal;
+  title: string;
+  subtitle: string;
+  type: "credit" | "debit";
+  amount: number;
+  date: string;
+};
+
+const STATIC_RECENT_PAYMENTS: RecentPayment[] = [
   {
     id: 1,
     icon: siPaypal,
@@ -65,6 +77,52 @@ const recentPayments = [
 ];
 
 export function AccountOverview() {
+  const [recentPayments, setRecentPayments] = useState<RecentPayment[]>(STATIC_RECENT_PAYMENTS);
+
+  useEffect(() => {
+    const supabase = createClient();
+
+    const loadPayments = async () => {
+      try {
+        const { data, error } = await supabase
+          .from("company_payments")
+          .select("id, amount, currency, status, created_at, plan, provider")
+          .eq("status", "success")
+          .order("created_at", { ascending: false })
+          .limit(5);
+
+        if (error || !data) return;
+
+        type Row = { id: string; amount: number | null; currency: string | null; plan: string | null; provider: string | null; created_at: string | null };
+        const mapped: RecentPayment[] = (data as Row[]).map((p) => {
+          const amount = Number(p.amount ?? 0);
+          const createdAt = p.created_at ? new Date(p.created_at) : null;
+          const dateLabel = createdAt
+            ? createdAt.toLocaleDateString("tr-TR", { month: "short", day: "numeric" })
+            : "";
+
+          return {
+            id: p.id,
+            icon: siPaypal,
+            title: `Şirket abonelik ödemesi`,
+            subtitle: `${p.plan ?? ""} plan · ${p.currency ?? "TRY"} · ${p.provider ?? "mock"}`,
+            type: "credit",
+            amount,
+            date: dateLabel,
+          };
+        });
+
+        if (mapped.length) {
+          setRecentPayments(mapped);
+        }
+      } catch {
+        // Sessizce fallback olarak statik veriyi kullan
+      }
+    };
+
+    void loadPayments();
+  }, []);
+
   return (
     <Card className="shadow-xs">
       <CardHeader className="items-center">
